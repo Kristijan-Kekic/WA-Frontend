@@ -12,7 +12,7 @@
           <a class="nav-link" href="/pregled">Pregled</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/edit">Uređivanje</a>
+          <a class="nav-link" href="/edit">Uređivanje/dodavanje</a>
         </li>
       </ul>
     </div>
