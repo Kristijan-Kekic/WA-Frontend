@@ -29,6 +29,7 @@ export default {
     console.log('firebase dohvat...');
 
     db.collection('ocjene')
+        .orderBy('ocj', 'desc')
         .get()
         .then((query) => {
           this.ocjene = [];

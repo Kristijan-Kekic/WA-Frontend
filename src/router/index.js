@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Edit from '../views/Edit.vue'
 import Pregled from '../views/Pregled.vue'
+import PregledMax from '../views/PregledMax.vue'
+import PregledMin from '../views/PregledMin.vue'
 import Home from '../views/Home.vue'
 import Dodaj from '../views/Add.vue'
 
@@ -22,6 +24,16 @@ const routes = [
     path: '/pregled',
     name: 'Pregled',
     component: Pregled
+  },
+  {
+    path: '/pregledmax',
+    name: 'PregledMax',
+    component: PregledMax
+  },
+  {
+    path: '/pregledmin',
+    name: 'PregledMin',
+    component: PregledMin
   },
   {
     path: '/edit/add',

@@ -6,9 +6,9 @@
   <div class="col-2"></div>
   <div class="col-8">
   <br>
-  <b-button pill id="dugme" v-on:click="greet">Pregled danih ocjena</b-button>
-  <b-button pill id="dugme">Najbolja ocjena</b-button>
-  <b-button pill id="dugme">Najgora ocjena</b-button>
+  <b-button pill id="dugme" href="/pregled">Pregled danih ocjena</b-button>
+  <b-button pill id="dugme" href="/pregledmax">Najbolja ocjena</b-button>
+  <b-button pill id="dugme" href="/pregledmin">Najgora ocjena</b-button>
   <b-button pill id="dugme">Specifična ocjena</b-button>
   <b-button pill id="dugme">Broj danih ocjena</b-button>
   </div>
