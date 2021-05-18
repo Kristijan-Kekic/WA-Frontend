@@ -2,20 +2,49 @@
   <div class="fluid-container">
     <Filteri/>
     <br>
-    <Ocjena/>
-
+    <Grade v-for="ocjena in ocjene" :key="ocjena.id" :info="ocjena"/>
   </div>
 </template>
 
 <script>
 import Filteri from '@/components/Filteri.vue';
-import Ocjena from '@/components/Ocjena.vue';
+import Grade from '@/components/Grade.vue';
+import { db } from '@/firebase';
 
 export default {
   name: 'Pregled',
   components: {
-  Filteri, Ocjena
+  Filteri, Grade
+  },
+  data: function () {
+    return {
+      ocjene: []
+    }
+  },
+  mounted() {
+    this.getOcjene();
+  },
+  methods: {
+  getOcjene() {
+    console.log('firebase dohvat...');
+
+    db.collection('ocjene')
+        .get()
+        .then((query) => {
+          this.ocjene = [];
+          query.forEach((doc) => {
+            const data = doc.data();
+            this.ocjene.push({
+              id: doc.id,
+              prof: data.prof,
+              ocj: data.ocj,
+           })
+        });
+    })
+    console.log();
   }
+  },
+
 }
 </script>
 
