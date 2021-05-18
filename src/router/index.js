@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Edit from '../views/Edit.vue'
 import Pregled from '../views/Pregled.vue'
 import Home from '../views/Home.vue'
+import Dodaj from '../views/Add.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/pregled',
     name: 'Pregled',
     component: Pregled
+  },
+  {
+    path: '/edit/add',
+    name: 'Dodaj',
+    component: Dodaj
   }
 ]
 

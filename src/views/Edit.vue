@@ -6,7 +6,7 @@
   <div class="row">
   <div class="col-3"></div>
   <div class="col-2">
-    <b-button pill id="dugme">Dodaj ocjenu</b-button>
+    <b-button pill id="dugme" href="edit/add">Dodaj ocjenu</b-button>
   </div>
   <div class="col-2"></div>
   <div class="col-2">

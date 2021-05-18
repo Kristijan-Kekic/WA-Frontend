@@ -36,7 +36,7 @@ export default {
   height:50%;
   padding:4.5%;
   box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747);
-border: 1px solid lightgrey;
+  border: 1px solid lightgrey;
 }
 
 .rl{
