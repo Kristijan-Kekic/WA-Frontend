@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { db } from '@/firebase';
+import { Ocjene } from '@/services'; 
 
 export default {
   name: 'Add',
@@ -46,18 +46,11 @@ export default {
 
   methods: {
       postNewGrade() {
-          const profesor = this.profesor
-          const ocjena = this.ocjena
-
-          db.collection('ocjene').add({
-             prof: profesor,
-             ocj: parseInt(ocjena),
-          })
-          .then((doc) => {
-              console.log('Ocjena unesena!', doc)
-              this.profesor = "";
-              this.ocjena = "";
-          })
+          let noviUnos = {
+            noviProfesor: this.profesor,
+            novaOcjena: parseInt(this.ocjena)
+          }
+          Ocjene.create(noviUnos)
           .catch((e) => {
               console.error(e);
           });      
