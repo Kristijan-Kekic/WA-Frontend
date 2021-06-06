@@ -9,6 +9,7 @@
 <script>
 import Filteri from '@/components/Filteri.vue';
 import Grade from '@/components/Grade.vue';
+import { Ocjene } from '@/services';
 
 export default {
   name: 'Pregled',
@@ -24,25 +25,11 @@ export default {
     this.getOcjene();
   },
   methods: {
-  getOcjene() {
+  async getOcjene() {
     this.ocjene = []
-    fetch("http://localhost:3000/ocjene")
-    .then(r => {
-      return r.json()
-    })
-    .then (data => {
-      console.log("backend", data)
+    this.ocjene = await Ocjene.getAll()
+  }
 
-      let data2 = data.map(element => {
-        return {
-          id: element.id,
-          prof: element.profesor,
-          ocj: element.ocjena,
-          kom: element.komentar
-        }
-      })
-      this.ocjene = data2
-    })
 
     //db.collection('ocjene')
     //    .get()
@@ -57,7 +44,6 @@ export default {
     //       })
     //    });
     //})
-  }
 },
 
 }
