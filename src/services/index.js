@@ -8,15 +8,8 @@ let Service = axios.create({
 
 //ruta za prikaz ocjena
 let Ocjene = {
-    async create(data) {
-        let ServerData = {
-            profesor: data.noviProfesor,
-            ocjena: data.novaOcjena,
-            komentar: data.noviKomentar
-        }
-        console.log("Spremam na backend", data)
-        await Service.post("/ocjene", ServerData)
-        return
+    add(ocjena) {
+        return Service.post("/ocjene", ocjena)
     },
     async getAll() {
         let response = await Service.get('/ocjene')

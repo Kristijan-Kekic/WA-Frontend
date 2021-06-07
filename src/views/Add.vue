@@ -43,11 +43,11 @@
 </template>
 
 <script>
-import { Ocjene } from '@/services'; 
+import { Ocjene } from '@/services/index.js'; 
 
 export default {
   name: 'Add',
-  data: function() {
+  data() {
     return {
         profesor: "",
         ocjena: "",
@@ -56,16 +56,14 @@ export default {
   },
 
   methods: {
-      postNewGrade() {
+      async postNewGrade() {
           let noviUnos = {
             noviProfesor: this.profesor,
             novaOcjena: parseInt(this.ocjena),
             noviKomentar: this.komentar
           }
-          Ocjene.create(noviUnos)
-          .catch((e) => {
-              console.error(e);
-          });      
+      let newOne = await Ocjene.addNewInput(noviUnos)
+      console.log("dodano", newOne.data)   
       }
   } 
 }
