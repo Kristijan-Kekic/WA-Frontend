@@ -9,7 +9,7 @@
 <script>
 import Filteri from '@/components/Filteri.vue';
 import Grade from '@/components/Grade.vue';
-import { db } from '@/firebase';
+import { Ocjene } from '@/services';
 
 export default {
   name: 'Pregled',
@@ -25,24 +25,9 @@ export default {
     this.getOcjene();
   },
   methods: {
-  getOcjene() {
-    console.log('firebase dohvat...');
-
-    db.collection('ocjene')
-        .orderBy('ocj', 'desc')
-        .get()
-        .then((query) => {
-          this.ocjene = [];
-          query.forEach((doc) => {
-            const data = doc.data();
-            this.ocjene.push({
-              id: doc.id,
-              prof: data.prof,
-              ocj: data.ocj,
-           })
-        });
-    })
-    console.log();
+  async getOcjene() {
+    this.ocjene = []
+    this.ocjene = await Ocjene.getAllMax()
   }
 },
 

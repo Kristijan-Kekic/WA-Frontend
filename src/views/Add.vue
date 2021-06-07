@@ -21,6 +21,16 @@
     type="number"
     class="form-control ml-2"
     id="ocjena"
+    min="1" max="5"
+    />
+    </div>
+    <div class="form-group">
+    <label for="komentar">Komentar</label>
+    <br>
+    <input v-model="komentar"
+    type="text"
+    class="form-control ml-2"
+    id="komentar"
     />
     </div>
     <br>
@@ -41,6 +51,7 @@ export default {
     return {
         profesor: "",
         ocjena: "",
+        komentar: ""
     };
   },
 
@@ -48,7 +59,8 @@ export default {
       postNewGrade() {
           let noviUnos = {
             noviProfesor: this.profesor,
-            novaOcjena: parseInt(this.ocjena)
+            novaOcjena: parseInt(this.ocjena),
+            noviKomentar: this.komentar
           }
           Ocjene.create(noviUnos)
           .catch((e) => {

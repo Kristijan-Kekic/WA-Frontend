@@ -11,7 +11,8 @@ let Ocjene = {
     async create(data) {
         let ServerData = {
             profesor: data.noviProfesor,
-            ocjena: data.novaOcjena
+            ocjena: data.novaOcjena,
+            komentar: data.noviKomentar
         }
         console.log("Spremam na backend", data)
         await Service.post("/ocjene", ServerData)
@@ -19,6 +20,33 @@ let Ocjene = {
     },
     async getAll() {
         let response = await Service.get('/ocjene')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                id: element._id,
+                prof: element.profesor,
+                ocj: element.ocjena,
+                kom: element.komentar
+            };
+        });
+        return data
+    },
+    async getAllMin() {
+        let response = await Service.get('/ocjenemin')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                id: element._id,
+                prof: element.profesor,
+                ocj: element.ocjena,
+                kom: element.komentar
+            };
+        });
+        return data
+    },
+
+    async getAllMax() {
+        let response = await Service.get('/ocjenemax')
         let data = response.data
         data = data.map(element => {
             return { 
