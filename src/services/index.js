@@ -8,7 +8,7 @@ let Service = axios.create({
 
 //ruta za prikaz ocjena
 let Ocjene = {
-    add(ocjena) {
+    addNewInput(ocjena) {
         return Service.post("/ocjene", ocjena)
     },
     async getAll() {

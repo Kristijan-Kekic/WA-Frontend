@@ -58,9 +58,9 @@ export default {
   methods: {
       async postNewGrade() {
           let noviUnos = {
-            noviProfesor: this.profesor,
-            novaOcjena: parseInt(this.ocjena),
-            noviKomentar: this.komentar
+            profesor: this.profesor,
+            ocjena: parseInt(this.ocjena),
+            komentar: this.komentar
           }
       let newOne = await Ocjene.addNewInput(noviUnos)
       console.log("dodano", newOne.data)   
