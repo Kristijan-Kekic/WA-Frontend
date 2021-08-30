@@ -11,7 +11,7 @@ let Ocjene = {
     addNewInput(ocjena) {
         return Service.post("/ocjene", ocjena)
     },
-    async getAll() {
+    async getAllDefault() {
         let response = await Service.get('/ocjene')
         let data = response.data
         data = data.map(element => {
@@ -40,6 +40,19 @@ let Ocjene = {
 
     async getAllMax() {
         let response = await Service.get('/ocjenemax')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                id: element._id,
+                prof: element.profesor,
+                ocj: element.ocjena,
+                kom: element.komentar
+            };
+        });
+        return data
+    },
+    async getAllSpec() {
+        let response = await Service.get('/ocjenespec')
         let data = response.data
         data = data.map(element => {
             return { 
