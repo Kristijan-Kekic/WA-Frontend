@@ -4,7 +4,7 @@
     <div class="gumbovi" align="center">
       <b-button id="dugme" @click="getOcjeneMax">Najbolja ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneMin">Najgora ocjena</b-button>
-      <b-button id="dugme" @click="getOcjeneMin">Specifična ocjena</b-button>
+      <b-button id="dugme" @click="getOcjeneSpec">Specifična ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneMin">Broj danih ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneDefault">Resetiraj filtere</b-button>
     </div>

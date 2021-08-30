@@ -1,7 +1,7 @@
 <template>
   <div class="container">
   <br>
-  <h1 id="pregled-naslov">Dodavanje/uređivanje ocjena </h1>
+  <h1 id="pregled-naslov" align="center">Dodavanje/uređivanje ocjena </h1>
   <br>
   <div class="row">
   <div class="col-3"></div>
