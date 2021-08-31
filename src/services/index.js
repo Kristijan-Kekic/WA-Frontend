@@ -63,6 +63,17 @@ let Ocjene = {
             };
         });
         return data
+    },
+    async getAllAvg() {
+        let response = await Service.get('/ocjeneavg')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                prof: element._id,
+                ocj: element.avgOcjena
+            };
+        });
+        return data
     }
 }
 

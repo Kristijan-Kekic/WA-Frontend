@@ -5,7 +5,7 @@
       <b-button id="dugme" @click="getOcjeneMax">Najbolja ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneMin">Najgora ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneSpec">Specifična ocjena</b-button>
-      <b-button id="dugme" @click="getOcjeneMin">Broj danih ocjena</b-button>
+      <b-button id="dugme" @click="getOcjeneAvg">Prosjek ocjene za prof</b-button>
       <b-button id="dugme" @click="getOcjeneDefault">Resetiraj filtere</b-button>
     </div>
     <br>
@@ -48,6 +48,11 @@ export default {
   async getOcjeneSpec() {
     this.ocjene = []
     this.ocjene = await Ocjene.getAllSpec()
+  },
+  async getOcjeneAvg() {
+    this.ocjene = []
+    this.ocjene = await Ocjene.getAllAvg()
+    console.log(this.ocjene)
   },
 },
 

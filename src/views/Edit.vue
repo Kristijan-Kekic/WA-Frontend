@@ -10,7 +10,7 @@
   </div>
   <div class="col-2"></div>
   <div class="col-2">
-    <b-button pill id="dugme">Uredi ocjenu</b-button>
+    <b-button pill id="dugme" href="edit/change">Uredi ocjenu</b-button>
   </div>
   <div class="col-3"></div>
   </div>  
