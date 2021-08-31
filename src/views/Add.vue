@@ -63,7 +63,10 @@ export default {
             komentar: this.komentar
           }
       let newOne = await Ocjene.addNewInput(noviUnos)
-      console.log("dodano", newOne.data)   
+      console.log("dodano", newOne.data)
+      this.profesor = "",
+      this.ocjena = "",
+      this.komentar = ""
       }
   } 
 }
