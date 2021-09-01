@@ -7,6 +7,8 @@ import Home from '../views/Home.vue'
 import Dodaj from '../views/Add.vue'
 import Uredi from '../views/Change.vue'
 import Uredi_id from '../views/Change_id.vue'
+import Login_reg from '../views/Login_reg.vue'
+import Registracija from '../views/Registracija.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +47,16 @@ const routes = [
     path: '/pregled/avggrade',
     name: 'AvgGrade',
     component: AvgGrade
+  },
+  {
+    path: '/login_reg',
+    name: 'Login_reg',
+    component: Login_reg
+  },
+  {
+    path: '/registracija',
+    name: 'Registracija',
+    component: Registracija
   }
 ]
 

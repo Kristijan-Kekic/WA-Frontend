@@ -14,6 +14,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/edit">Uređivanje/dodavanje</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login_reg">Login/registracija</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -26,3 +29,6 @@ export default {
   name: "Navbar",
 };
 </script>
+
+<style scoped>
+</style>
