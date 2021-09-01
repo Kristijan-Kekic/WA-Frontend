@@ -67,8 +67,8 @@ let Ocjene = {
         });
         return data
     },
-    async getAllSpec() {
-        let response = await Service.get('/ocjenespec')
+    async getJedan() {
+        let response = await Service.get('/ocjenejedan')
         let data = response.data
         data = data.map(element => {
             return { 
@@ -80,6 +80,21 @@ let Ocjene = {
         });
         return data
     },
+
+    async getDva() {
+        let response = await Service.get('/ocjenedva')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                id: element._id,
+                prof: element.profesor,
+                ocj: element.ocjena,
+                kom: element.komentar
+            };
+        });
+        return data
+    },
+
     async getAllAvg() {
         let response = await Service.get('/ocjeneavg')
         let data = response.data

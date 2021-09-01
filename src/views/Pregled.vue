@@ -4,8 +4,12 @@
     <div class="gumbovi" align="center">
       <b-button id="dugme" @click="getOcjeneMax">Najbolja ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneMin">Najgora ocjena</b-button>
-      <b-button id="dugme" @click="getOcjeneSpec">Specifična ocjena</b-button>
-      <b-button id="dugme" @click="getOcjeneAvg">Prosjek ocjene za prof</b-button>
+      <b-dropdown text="Outline Danger" variant="outline-danger" class="m-2">
+        <b-dropdown-item @click="getJedan">1</b-dropdown-item>
+        <b-dropdown-item @click="getDva">2</b-dropdown-item>
+      </b-dropdown>
+      <b-button id="dugme" @click="getJedan">Specifična ocjena</b-button>
+      <b-button id="dugme" href="/pregled/avggrade">Prosjek ocjene za prof</b-button>
       <b-button id="dugme" @click="getOcjeneDefault">Resetiraj filtere</b-button>
     </div>
     <br>
@@ -45,9 +49,13 @@ export default {
     this.ocjene = []
     this.ocjene = await Ocjene.getAllMin()
   },
-  async getOcjeneSpec() {
+  async getJedan() {
     this.ocjene = []
-    this.ocjene = await Ocjene.getAllSpec()
+    this.ocjene = await Ocjene.getJedan()
+  },
+  async getDva() {
+    this.ocjene = []
+    this.ocjene = await Ocjene.getDva()
   },
   async getOcjeneAvg() {
     this.ocjene = []
