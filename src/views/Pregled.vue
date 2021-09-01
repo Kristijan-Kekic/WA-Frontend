@@ -4,11 +4,13 @@
     <div class="gumbovi" align="center">
       <b-button id="dugme" @click="getOcjeneMax">Najbolja ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneMin">Najgora ocjena</b-button>
-      <b-dropdown text="Outline Danger" variant="outline-danger" class="m-2">
+      <b-dropdown text="Specifična ocjena" class="m-2">
         <b-dropdown-item @click="getJedan">1</b-dropdown-item>
         <b-dropdown-item @click="getDva">2</b-dropdown-item>
+        <b-dropdown-item @click="getTri">3</b-dropdown-item>
+        <b-dropdown-item @click="getCetiri">4</b-dropdown-item>
+        <b-dropdown-item @click="getPet">5</b-dropdown-item>
       </b-dropdown>
-      <b-button id="dugme" @click="getJedan">Specifična ocjena</b-button>
       <b-button id="dugme" href="/pregled/avggrade">Prosjek ocjene za prof</b-button>
       <b-button id="dugme" @click="getOcjeneDefault">Resetiraj filtere</b-button>
     </div>
@@ -51,11 +53,23 @@ export default {
   },
   async getJedan() {
     this.ocjene = []
-    this.ocjene = await Ocjene.getJedan()
+    this.ocjene = await Ocjene.getOcjeneJedan()
   },
   async getDva() {
     this.ocjene = []
-    this.ocjene = await Ocjene.getDva()
+    this.ocjene = await Ocjene.getOcjeneDva()
+  },
+  async getTri() {
+    this.ocjene = []
+    this.ocjene = await Ocjene.getOcjeneTri()
+  },
+  async getCetiri() {
+    this.ocjene = []
+    this.ocjene = await Ocjene.getOcjeneCetiri()
+  },
+  async getPet() {
+    this.ocjene = []
+    this.ocjene = await Ocjene.getOcjenePet()
   },
   async getOcjeneAvg() {
     this.ocjene = []

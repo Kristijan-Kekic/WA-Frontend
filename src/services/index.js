@@ -67,7 +67,7 @@ let Ocjene = {
         });
         return data
     },
-    async getJedan() {
+    async getOcjeneJedan() {
         let response = await Service.get('/ocjenejedan')
         let data = response.data
         data = data.map(element => {
@@ -81,8 +81,50 @@ let Ocjene = {
         return data
     },
 
-    async getDva() {
+    async getOcjeneDva() {
         let response = await Service.get('/ocjenedva')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                id: element._id,
+                prof: element.profesor,
+                ocj: element.ocjena,
+                kom: element.komentar
+            };
+        });
+        return data
+    },
+
+    async getOcjeneTri() {
+        let response = await Service.get('/ocjenetri')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                id: element._id,
+                prof: element.profesor,
+                ocj: element.ocjena,
+                kom: element.komentar
+            };
+        });
+        return data
+    },
+
+    async getOcjeneCetiri() {
+        let response = await Service.get('/ocjenecetiri')
+        let data = response.data
+        data = data.map(element => {
+            return { 
+                id: element._id,
+                prof: element.profesor,
+                ocj: element.ocjena,
+                kom: element.komentar
+            };
+        });
+        return data
+    },
+
+    async getOcjenePet() {
+        let response = await Service.get('/ocjenepet')
         let data = response.data
         data = data.map(element => {
             return { 
