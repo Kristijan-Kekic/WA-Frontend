@@ -9,6 +9,7 @@ import Uredi from '../views/Change.vue'
 import Uredi_id from '../views/Change_id.vue'
 import Login_reg from '../views/Login_reg.vue'
 import Registracija from '../views/Registracija.vue'
+import { Auth } from '@/services'
 
 Vue.use(VueRouter)
 
@@ -64,6 +65,18 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const javneStranice = ["/login_reg","/registracija", "/","/pregled", "/pregled/avggrade"]
+  const loginPotreban = !javneStranice.includes(to.path)
+  const user = Auth.getUser()
+
+  if(!user && loginPotreban){
+    next("/login_reg")
+    return
+  }
+  next()
 })
 
 export default router

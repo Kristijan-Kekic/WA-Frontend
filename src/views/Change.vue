@@ -1,20 +1,26 @@
 <template>
 <div>
+  <br>
   <p align="center">Vaše ocjene</p>
   <Alert v-if="this.msg.length > 0"/> <!-- v-if gleda dal je msg veci od 0 nakon sto onclick msg postane "uspjesno" se poziva alert -->
   <div class="row">
+    <div class="col-2"></div>
+        <div class="col-2" id="lista">Profesor</div>
+        <div class="col-2" id="lista">Ocjena</div>
+        <div class="col-2" id="lista">Komentar</div>
+    <div class="col-2"></div>
     <div v-for="ocjena in ocjene" :key="ocjena.id" :info="ocjena">
       <div class="row">
-      <div class="col-2"></div>
-      <div class="col-2" id="lista">{{ocjena.prof}}</div>
-      <div class="col-2" id="lista">{{ocjena.ocj}}</div>
-      <div class="col-2" id="lista">{{ocjena.kom}}</div>
-      <div class="col-2">
-      <b-button id="dugme" @click="editEntry(ocjena)">Uredi ocjenu</b-button>
-      <b-button id="dugme" @click="deleteEntry(ocjena.id)">Izbrisi ocjenu</b-button>
+        <div class="col-2"></div>
+        <div class="col-2" id="lista">{{ocjena.prof}}</div>
+        <div class="col-2" id="lista">{{ocjena.ocj}}</div>
+        <div class="col-2" id="lista">{{ocjena.kom}}</div>
+        <div class="col-2">
+        <b-button id="dugme" @click="editEntry(ocjena)">Uredi ocjenu</b-button>
+        <b-button id="dugme" @click="deleteEntry(ocjena.id)">Izbrisi ocjenu</b-button>
+        </div>
+        <div class="col-2"></div>
       </div>
-      <div class="col-2"></div>
-    </div>
     </div>
  </div>
 </div>
@@ -23,6 +29,7 @@
 <script>
 import { Ocjene } from '@/services/index.js';
 import Alert from '@/components/Alert.vue'
+import {Auth} from '@/services'
 
 export default {
   name: 'Add',
@@ -35,17 +42,18 @@ export default {
         ocjene: [],
         profesor: "",
         ocjena: "",
-        komentar: ""
+        komentar: "",
     };
   },
   mounted() {
-    this.getOcjeneDefault();
+    this.getOcjeneEdit();
   },
 
   methods: {
-      async getOcjeneDefault() {
+      async getOcjeneEdit() {
+        console.log(Auth.getUser())
         this.ocjene = []
-        this.ocjene = await Ocjene.getAllDefault()
+        this.ocjene = await Ocjene.getAllEdit()
        },
       async editEntry(ocjena) {
         this.$router.push(`/edit/change/${ocjena.id}`)

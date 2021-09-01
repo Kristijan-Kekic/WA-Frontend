@@ -17,6 +17,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/login_reg">Login/registracija</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" @click="Auth.logout">Logout</a>
+        </li>
       </ul>
     </div>
   </div>

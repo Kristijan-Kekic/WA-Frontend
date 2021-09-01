@@ -15,10 +15,6 @@
                         </div>
                         <div class="br"><br></div>
                         <div class="form-group">
-                            <input type="password" v-model="passwordRepeat" class="form-control" placeholder="Ponovi lozinku *" value="" />
-                        </div>
-                        <div class="br"><br></div>
-                        <div class="form-group">
                             <input type="button" @click="signup" class="btnSubmit" value="Registriraj se" />
                         </div>
                         <div class="br"><br></div>
@@ -32,17 +28,22 @@
 
 <script>
 
+import {Auth} from '@/services'
+
 export default {
     name: 'registracija',
     data (){
         return {
-        };
+            username:"",
+            password:""
+        }
     },
     methods: {
-           
+        async signup(){
+            await Auth.register(this.username, this.password)
+            this.$router.replace("/")
+        }
     },
-
-  
 };
 </script>
 

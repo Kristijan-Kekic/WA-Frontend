@@ -44,14 +44,15 @@
 
 <script>
 import { Ocjene } from '@/services/index.js'; 
-
+import { Auth } from '@/services'
 export default {
   name: 'Add',
   data() {
     return {
         profesor: "",
         ocjena: "",
-        komentar: ""
+        komentar: "",
+        korisnik: Auth.getUser().username
     };
   },
 
@@ -60,7 +61,8 @@ export default {
           let noviUnos = {
             profesor: this.profesor,
             ocjena: parseInt(this.ocjena),
-            komentar: this.komentar
+            komentar: this.komentar,
+            korisnik: this.korisnik
           }
       let newOne = await Ocjene.addNewInput(noviUnos)
       console.log("dodano", newOne.data)

@@ -21,7 +21,7 @@
                     <div class="reg">
                         <p>Nemaš račun? Registriraj se ispod!</p>
                         <div class="form-group">
-                        <router-link class="btnSubmit" to="/Registracija">Registriraj se!</router-link>
+                        <router-link class="btnSubmit" to="/registracija">Registriraj se!</router-link>
                         </div>
                     </div>
                 </div>
@@ -32,17 +32,25 @@
 
 <script>
 
+import {Auth} from '@/services'
 
 export default {
     name: "Login_reg",
     data() {
         return {
-            username: "",
-            password: ""
+            username: '',
+            password: ''
         }
     },
     methods : {
+        async login(){
+            let success = await Auth.login(this.username, this.password)
+            console.log("Rezultat prijave: ", success)
 
+            if(success == true) {
+                this.$router.replace({ name: "Home"})
+            }
+        }
     },
 }
 </script>
