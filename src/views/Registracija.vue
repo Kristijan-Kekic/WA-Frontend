@@ -40,6 +40,12 @@ export default {
     },
     methods: {
         async signup(){
+            if (this.username === '' || this.username === null || this.username.value === 0){
+                alert("Unesite Vaš e-mail!");
+            }
+            else if (this.password === '' || this.password === null){
+                alert("Unesite Vašu lozinku!");
+            }
             await Auth.register(this.username, this.password)
             this.$router.replace("/")
         }

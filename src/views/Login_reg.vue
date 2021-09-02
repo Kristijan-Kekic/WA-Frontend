@@ -5,7 +5,7 @@
               <div class="col-3"></div>
                 <div class="col-md-6 login-form-1">
                     <h3>Prijava</h3>
-                    <form>
+                    <form @submit.prevent="login">
                         <div class="form-group">
                             <input type="email" v-model="username" class="form-control" placeholder="Email *" value="" />
                         </div>
@@ -15,7 +15,7 @@
                         </div>
                         <div class="br"><br></div>
                         <div class="form-group">
-                            <input type="button" @click="login()" class="btnSubmit" value="Prijavi se" />
+                            <button type="submit" class="btnSubmit">Prijavi se</button>
                         </div>
                     </form>
                     <div class="reg">
@@ -44,6 +44,14 @@ export default {
     },
     methods : {
         async login(){
+            if (this.username === '' || this.username === null || this.username.value === 0){
+                alert("Unesite Vaš e-mail!");
+                return;
+            }
+            else if (this.password === '' || this.password === null){
+                alert("Unesite Vašu lozinku!");
+                return;
+            }
             let success = await Auth.login(this.username, this.password)
             console.log("Rezultat prijave: ", success)
 
