@@ -13,7 +13,7 @@
               <a class="nav-link" href="/pregled">Pregled</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/edit">Uređivanje/dodavanje</a>
+              <a class="nav-link" href="/edit" v-if="auth.authenticated">Uređivanje/dodavanje</a>
             </li>
             <li class="nav-item" v-if="!auth.authenticated">
               <a class="nav-link" href="/login_reg">Login/registracija</a>
