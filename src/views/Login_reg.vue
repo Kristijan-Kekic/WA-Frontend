@@ -52,12 +52,23 @@ export default {
                 alert("Unesite Vašu lozinku!");
                 return;
             }
-            let success = await Auth.login(this.username, this.password)
-            console.log("Rezultat prijave: ", success)
 
-            if(success == true) {
-                this.$router.replace({ name: "Home"})
+            try {
+                let success = await Auth.login(this.username, this.password)
+                console.log("Rezultat prijave: ", success)
+                if(success == true) {
+                    this.$router.replace({ name: "Home"})
+                }else {
+                    alert('Pogrešni podaci uneseni.')
+                }
+            } catch (error) {
+                console.log('Error: ', error )
             }
+
+            
+            
+
+            
         }
     },
 }

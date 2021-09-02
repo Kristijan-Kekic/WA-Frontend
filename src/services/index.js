@@ -1,5 +1,5 @@
 import axios from 'axios'
-import $router from '@/router'
+//import $router from '@/router'
 
 //vezan za backend
 let Service = axios.create({
@@ -20,7 +20,7 @@ Service.interceptors.request.use((request) => {
 Service.interceptors.response.use((response) => response, (error) => {
     if(error.response.status == 401 || error.response.status == 401) {
         Auth.logout()
-        $router.go()
+        //$router.go()
     }
 })
 
@@ -185,16 +185,22 @@ let Ocjene = {
 
 let Auth = {
     async login (username, password){
-        let response = await Service.post("/auth", {
-            username: username,
-            password: password
-        });
 
-        let user = response.data
-
-        localStorage.setItem("user", JSON.stringify(user));
-
+        try {
+            let response = await Service.post("/auth", {
+                username: username,
+                password: password
+            });
+    
+            let user = response.data
+    
+            localStorage.setItem("user", JSON.stringify(user));
         return true;
+        } catch (error) {
+            return false
+        }
+
+        
     },
     async register (username, password){
         let response = await Service.post("/users", {
