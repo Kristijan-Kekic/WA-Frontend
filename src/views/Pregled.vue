@@ -11,7 +11,7 @@
         <b-dropdown-item @click="getCetiri">4</b-dropdown-item>
         <b-dropdown-item @click="getPet">5</b-dropdown-item>
       </b-dropdown>
-      <b-button id="dugme" href="/pregled/avggrade">Prosjek ocjene za prof</b-button>
+      <b-button id="dugme" href="/pregled/avggrade">Prosječne ocjene</b-button>
       <b-button id="dugme" @click="getOcjeneDefault">Resetiraj filtere</b-button>
     </div>
     <br>
