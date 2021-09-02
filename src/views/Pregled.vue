@@ -4,7 +4,7 @@
     <div class="gumbovi" align="center">
       <b-button id="dugme" @click="getOcjeneMax">Najbolja ocjena</b-button>
       <b-button id="dugme" @click="getOcjeneMin">Najgora ocjena</b-button>
-      <b-dropdown text="Specifična ocjena" class="m-2">
+      <b-dropdown variant="outline" id="dropdaun" text="Specifična ocjena" class="m-2">
         <b-dropdown-item @click="getJedan">1</b-dropdown-item>
         <b-dropdown-item @click="getDva">2</b-dropdown-item>
         <b-dropdown-item @click="getTri">3</b-dropdown-item>
@@ -83,10 +83,12 @@ export default {
 
 <style>
 #dugme {
+  border:none;
   text-align: center;
   color: #444444;
   background: none;
   width: 200px;
   border-radius: 4px;
 }
+
 </style>

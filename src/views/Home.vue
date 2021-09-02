@@ -5,15 +5,15 @@
     </div>
     <div class="col-6">
       <br>
-      <div class="d-grid gap-5">
+      <div class="d-grid gap-1">
       <div class="col-5 mx-auto">
           <router-link class="rl" to="/pregled">Pregled ocjena</router-link>
       </div>
       <div id="tekst1">Ovdje možete pregledati sve ocjene</div>
-      <div class="col-5 mx-auto">
+      <div class="col-5 mx-auto" v-if="auth.authenticated">
           <router-link class="rl" to="/edit">Uređivanje/dodavanje ocjena</router-link>
       </div>
-      <div id="tekst2">Ovdje možete urediti ili dodati novu ocjenu</div>
+      <div id="tekst2" v-if="auth.authenticated">Ovdje možete urediti ili dodati novu ocjenu</div>
       </div>
     </div>
     <div class="col-3">
@@ -23,7 +23,14 @@
 </template>
 
 <script>
+import {Auth} from '@/services'
+
 export default {
+  data() {
+    return{
+      auth: Auth.state,
+    };
+  },
   name: 'Home',
 }
 </script>
