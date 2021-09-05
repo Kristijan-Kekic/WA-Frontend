@@ -53,7 +53,7 @@ export default {
                 return alert("Unesite Vašu lozinku!");
             }
             await Auth.register(this.username, this.password)
-            this.$router.replace("/")
+            this.$router.replace("/login_reg")
         }
     },
 };
