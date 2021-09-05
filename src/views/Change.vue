@@ -2,7 +2,6 @@
 <div>
   <br>
   <h2 align="center">Vaše unesene ocjene:</h2><br>
-  <Alert v-if="this.msg.length > 0"/> <!-- v-if gleda dal je msg veci od 0 nakon sto onclick msg postane "uspjesno" se poziva alert -->
   <div class="row">
     <div class="col-2"></div>
         <div class="col-2" id="lista">Profesor</div>
@@ -28,13 +27,11 @@
 
 <script>
 import { Ocjene } from '@/services/index.js';
-import Alert from '@/components/Alert.vue'
 import {Auth} from '@/services'
 
 export default {
   name: 'Add',
   components: {
-    Alert
   },
   data() {
     return {
