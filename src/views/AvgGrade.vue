@@ -2,7 +2,7 @@
   <div class="fluid-container">
     <br>
     <div class="gumbovi" align="center">
-      <b-button id="dugme" href="/pregled">Povratak na pregled</b-button>
+      <b-button variant="no-outline" id="dugme" href="/pregled">Povratak na pregled</b-button>
     </div>
     <br>
     <div class="container">
@@ -48,8 +48,8 @@ export default {
 <style>
 #dugme {
   text-align: center;
-  color: #444444;
-  background: none;
+  color: #ffffff;
+  background-color: #555599;
   width: 200px;
   border-radius: 4px;
 }

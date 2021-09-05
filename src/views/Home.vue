@@ -5,15 +5,13 @@
     </div>
     <div class="col-6">
       <br>
-      <div class="d-grid gap-1">
-      <div class="col-5 mx-auto">
-          <router-link class="rl" to="/pregled">Pregled ocjena</router-link>
+      <div align="center">
+          <b-button id="dugme" href="/pregled">Pregled ocjena</b-button>
+      <div id="tekst">Ovdje možete pregledati sve ocjene</div>
+      <div v-if="auth.authenticated" align="center">
+          <b-button id="dugme" href="/edit">Uređivanje/dodavanje ocjena</b-button>
       </div>
-      <div id="tekst1">Ovdje možete pregledati sve ocjene</div>
-      <div class="col-5 mx-auto" v-if="auth.authenticated">
-          <router-link class="rl" to="/edit">Uređivanje/dodavanje ocjena</router-link>
-      </div>
-      <div id="tekst2" v-if="auth.authenticated">Ovdje možete urediti ili dodati novu ocjenu</div>
+      <div id="tekst" v-if="auth.authenticated">Ovdje možete urediti ili dodati novu ocjenu</div>
       </div>
     </div>
     <div class="col-3">
@@ -35,27 +33,16 @@ export default {
 }
 </script>
 
-<style>
-.col-5{
-  border-radius: 10px;
-  background:white;
-  width:50%;
-  height:50%;
-  padding:4.5%;
-  box-shadow: 4px 4px 5px rgba(145, 144, 144, 0.747);
-  border: 1px solid lightgrey;
-}
-
-.rl{
-  color:black;
-  text-decoration:none;
-}
-
-#tekst1 {
+<style scoped>
+#tekst {
   text-align: center;
 }
-
-#tekst2 {
+#dugme {
+  margin: 20px;
   text-align: center;
+  width: 400px;
+  border-radius: 4px;
+  background-color: #555599;
+  color: #ffffff;
 }
 </style>

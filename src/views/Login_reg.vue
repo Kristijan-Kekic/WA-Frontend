@@ -19,10 +19,8 @@
                         </div>
                     </form>
                     <div class="reg">
-                        <p>Nemaš račun? Registriraj se ispod!</p>
-                        <div class="form-group">
-                        <router-link class="btnSubmit" to="/registracija">Registriraj se!</router-link>
-                        </div>
+                        <p>Nemate račun? Registriraj se ispod!</p>
+                        <b-button id="dugme" href="/registracija">Registriraj se!</b-button>
                     </div>
                 </div>
                 <div class="col-3"></div>
@@ -64,11 +62,6 @@ export default {
             } catch (error) {
                 console.log('Error: ', error )
             }
-
-            
-            
-
-            
         }
     },
 }
@@ -92,18 +85,24 @@ export default {
 .login-container form{
     padding: 10%;
 }
+
 .btnSubmit
 {
     width: 50%;
-    border-radius: 1rem;
+    border-radius: 4px;
     padding: 1.5%;
     border: none;
     cursor: pointer;
+    background-color: #555599;
+    color: #ffffff;
 }
-.login-form-1 .btnSubmit{
-    font-weight: 600;
-    color: #fff;
-    background-color: #0062cc;
+
+#dugme {
+    text-align: center;
+    width: 200px;
+    border-radius: 4px;
+    background-color: #555599;
+    color: #ffffff;
 }
 
 </style>

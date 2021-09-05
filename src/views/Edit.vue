@@ -1,16 +1,13 @@
 <template>
   <div class="container">
   <br>
-  <h1 id="pregled-naslov" align="center">Dodavanje/uređivanje ocjena </h1>
+  <h2 id="pregled-naslov" align="center">Dodavanje/uređivanje ocjena</h2>
   <br>
-  <div class="row">
+  <div class="row" align="center">
   <div class="col-3"></div>
-  <div class="col-2">
-    <b-button pill id="dugme" href="edit/add">Dodaj ocjenu</b-button>
-  </div>
-  <div class="col-2"></div>
-  <div class="col-2">
-    <b-button pill id="dugme" href="edit/change">Uredi ocjenu</b-button>
+  <div class="col-6">
+    <b-button id="dugme" variant="no-outline" href="edit/add">Dodaj ocjenu</b-button>
+    <b-button id="dugme" variant="no-outline" href="edit/change">Uredi ocjenu</b-button>
   </div>
   <div class="col-3"></div>
   </div>  
@@ -25,4 +22,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#dugme {
+  margin:20px;
+  text-align: center;
+  width: 200px;
+  border-radius: 4px;
+  background-color: #555599;
+  color: #ffffff;
+}
+</style>
 

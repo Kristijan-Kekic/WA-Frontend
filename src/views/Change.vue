@@ -1,7 +1,7 @@
 <template>
 <div>
   <br>
-  <p align="center">Vaše ocjene</p>
+  <h2 align="center">Vaše unesene ocjene:</h2><br>
   <Alert v-if="this.msg.length > 0"/> <!-- v-if gleda dal je msg veci od 0 nakon sto onclick msg postane "uspjesno" se poziva alert -->
   <div class="row">
     <div class="col-2"></div>
@@ -10,14 +10,14 @@
         <div class="col-2" id="lista">Komentar</div>
     <div class="col-2"></div>
     <div v-for="ocjena in ocjene" :key="ocjena.id" :info="ocjena">
-      <div class="row">
+      <div class="row tablica">
         <div class="col-2"></div>
-        <div class="col-2" id="lista">{{ocjena.prof}}</div>
-        <div class="col-2" id="lista">{{ocjena.ocj}}</div>
-        <div class="col-2" id="lista">{{ocjena.kom}}</div>
+        <div class="col-2 tablicatekst" id="lista">{{ocjena.prof}}</div>
+        <div class="col-2 tablicatekst" id="lista">{{ocjena.ocj}}</div>
+        <div class="col-2 tablicatekst" id="lista">{{ocjena.kom}}</div>
         <div class="col-2">
-        <b-button id="dugme" @click="editEntry(ocjena)">Uredi ocjenu</b-button>
-        <b-button id="dugme" @click="deleteEntry(ocjena.id)">Izbrisi ocjenu</b-button>
+        <b-button id="dugme" variant="no-outline" @click="editEntry(ocjena)">Uredi ocjenu</b-button>
+        <b-button id="dugme" variant="no-outline" @click="deleteEntry(ocjena.id)">Izbrisi ocjenu</b-button>
         </div>
         <div class="col-2"></div>
       </div>
@@ -70,3 +70,28 @@ export default {
 }
 </script>
 
+<style scoped>
+#dugme {
+    text-align: center;
+    margin: 1px 0;
+    width: 200px;
+    border-radius: 4px;
+    background-color: #555599;
+    color: #ffffff;
+}
+
+.tablica{
+  text-align: center;
+}
+
+.tablicatekst{
+  text-align: center;
+  padding: 25px 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>

@@ -2,17 +2,17 @@
   <div class="fluid-container">
     <br>
     <div class="gumbovi" align="center">
-      <b-button id="dugme" @click="getOcjeneMax">Najbolja ocjena</b-button>
-      <b-button id="dugme" @click="getOcjeneMin">Najgora ocjena</b-button>
-      <b-dropdown variant="outline" id="dropdaun" text="Specifična ocjena" class="m-2">
+      <b-button id="dugme1" variant="no-outline" @click="getOcjeneMax">Najbolja ocjena</b-button>
+      <b-button id="dugme1" variant="no-outline" @click="getOcjeneMin">Najgora ocjena</b-button>
+      <b-dropdown id="dropdaun" variant="no-outline text-white" text="Specifična ocjena" class="m-2">
         <b-dropdown-item @click="getJedan">1</b-dropdown-item>
         <b-dropdown-item @click="getDva">2</b-dropdown-item>
         <b-dropdown-item @click="getTri">3</b-dropdown-item>
         <b-dropdown-item @click="getCetiri">4</b-dropdown-item>
         <b-dropdown-item @click="getPet">5</b-dropdown-item>
       </b-dropdown>
-      <b-button id="dugme" href="/pregled/avggrade">Prosječne ocjene</b-button>
-      <b-button id="dugme" @click="getOcjeneDefault">Resetiraj filtere</b-button>
+      <b-button id="dugme1" variant="no-outline" href="/pregled/avggrade">Prosječne ocjene</b-button>
+      <b-button id="dugme1" @click="getOcjeneDefault">Resetiraj filtere</b-button>
     </div>
     <br>
     <test/>
@@ -82,11 +82,19 @@ export default {
 </script>
 
 <style>
-#dugme {
-  border:none;
+#dugme1 {
+  margin: 0px 10px;
   text-align: center;
-  color: #444444;
-  background: none;
+  background-color: #555599;
+  color: #ffffff;
+  width: 200px;
+  border-radius: 4px;
+}
+
+#dropdaun {
+  margin: 0px 10px;
+  text-align: center;
+  background-color: #555599;
   width: 200px;
   border-radius: 4px;
 }

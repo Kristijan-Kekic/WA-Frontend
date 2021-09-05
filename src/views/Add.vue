@@ -34,7 +34,7 @@
     />
     </div>
     <br>
-    <button type="submit" class="btn btn-primary ml-2">Unesi ocjenu</button>
+    <button type="submit" class="btnSubmit">Unesi ocjenu</button>
     </form>
     </div>
     <div class="col-4">
@@ -74,3 +74,14 @@ export default {
 }
 </script>
 
+<style scoped>
+.btnSubmit{
+  width: 50%;
+  border-radius: 4px;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+  background-color: #555599;
+  color: #ffffff;
+}
+</style>
