@@ -3,7 +3,7 @@ import axios from 'axios'
 
 //vezan za backend
 let Service = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://wa-backend2-2a6lt7ozx-kristijan-kekic.vercel.app:3000',
     timeout: 5000
 })
 
@@ -57,13 +57,13 @@ let Ocjene = {
         return data
     },
 
-    async getOneGrade(id) {
-        let response = await Service.get(`/ocjene/${id}`)
-        let data = response.data
+    async getOneGrade(id) { // izvlaci se id sta je poslan
+        let response = await Service.get(`/ocjene/${id}`) //$ predstavlja da je dinamican
+        let data = response.data //sta mu vrati backend
         return data
     },
 
-    async modifyGrade(id, profesor, ocjena, komentar) {
+    async modifyGrade(id, profesor, ocjena, komentar) { //izvlaci se poslani id, prof...
         let response = await Service.put(`/ocjene/${id}`, {profesor, ocjena, komentar})
         let data = response.data
         return data

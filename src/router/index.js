@@ -40,7 +40,7 @@ const routes = [
     component: Uredi
   },
   {
-    path: '/edit/change/:id',
+    path: '/edit/change/:id', //:id sluzi da se vuku parametri iz rute
     name: 'Uredi_id',
     component: Uredi_id
   },
