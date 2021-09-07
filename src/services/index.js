@@ -3,7 +3,7 @@ import axios from 'axios'
 
 //vezan za backend
 let Service = axios.create({
-    baseURL: 'https://wa-backend2-2a6lt7ozx-kristijan-kekic.vercel.app:3000',
+    baseURL: 'https://evening-hamlet-82779.herokuapp.com/',
     timeout: 5000
 })
 
